@@ -34,7 +34,7 @@ twice, with the same bytes, as the organisation's publishing standard requires
    so a hardcoded org would 403 the moment the repo moved).
 5. Publishes the same archive to the Marketplace's `blueprints` index
    (`https://krateo-blueprints.github.io/charts/blueprints`) through the organisation's
-   publisher (`krateo-blueprints/charts/.github/workflows/publish-chart.yaml@1`). The
+   publisher (`krateo-blueprints/charts/.github/workflows/publish-chart.yaml`, pinned per its rule 9). The
    portal Marketplace installs from that index, not from GHCR; the publisher succeeds only
    once the served index lists the version and `helm pull --repo` installs it anonymously.
 6. Attaches the stamped `compositiondefinition.yaml` to the GitHub release for the tag.
