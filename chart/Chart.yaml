@@ -33,7 +33,7 @@ keywords:
   - rancher
   - cluster-management
   - installer
-  - kubernetes
+  - blueprint
 sources:
   - https://github.com/krateo-blueprints/krateo-rancher-blueprint
   - https://github.com/rancher/rancher
