@@ -116,12 +116,16 @@ The chart is a self-contained fork (no dependencies). One plain-semver tag (`X.Y
 
 ```sh
 git tag 0.1.0 && git push origin 0.1.0
-# → .github/workflows/release-tag.yaml packages chart/ and pushes
+# → .github/workflows/release-tag.yaml packages chart/, pushes
 #   oci://ghcr.io/krateo-blueprints/charts/rancher-installer:0.1.0
+#   and publishes the same archive to the Marketplace's blueprints index
 ```
 
+The release follows the organisation's publishing standard (krateo-blueprints/charts
+`PUBLISHING.md`): the portal Marketplace installs from
+`https://krateo-blueprints.github.io/charts/blueprints`, not from GHCR.
 `.github/workflows/lint.yaml` runs `helm lint` + `helm template` and the shared
-`lint-docs` check on every PR. **Updating Rancher = re-fork** (replace `templates/`,
+`lint-docs` check on every PR and push to `main`. **Updating Rancher = re-fork** (replace `templates/`,
 `scripts/`, `values.yaml` from the new upstream version, re-apply the `service.yaml`
 NodePort patch, reconcile `values.schema.json`) — the runbook is in
 [docs/release.md](docs/release.md).
